@@ -17,7 +17,7 @@ def run_single_simulation(dt: float):
         fluid_mass=2.5,
         rod_specific_heat=3.85,
         fluid_specific_heat=4.1813,
-        heat_transfer_coeff=160.0,
+        heat_transfer_coeff=170.0,
     )
 
     # Warunki początkowe: [Tb(0), Tw(0)]
@@ -42,6 +42,8 @@ def run_single_simulation(dt: float):
         params=params,
     )
 
+    print("Tb_end =", T_euler[-1, 0], "Tw_end =", T_euler[-1, 1])
+    print("Tb_end_heun =", T_heun[-1, 0], "Tw_end_heun =", T_heun[-1, 1])
     # Wykres
     plt.figure(figsize=(8, 5))
     plt.plot(t_euler, T_euler[:, 0], label="Tb – Euler")
@@ -62,3 +64,4 @@ def run_single_simulation(dt: float):
 if __name__ == "__main__":
     # Na start: jeden sensowny krok
     run_single_simulation(dt=0.001)
+
