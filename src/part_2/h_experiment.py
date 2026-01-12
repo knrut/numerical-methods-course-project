@@ -14,7 +14,7 @@ EPS = 1e-12  # żeby nie dzielić przez zero przy błędzie względnym
 
 def compute_error_metrics(y_true: np.ndarray, y_approx: np.ndarray) -> dict:
     """
-    Liczy podstawowe miary błędu:
+    Liczymy podstawowe miary błędu:
     - średni błąd bezwzględny (MAE)
     - błąd RMS (RMSE)
     - błąd maksymalny
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     metrics_interp = compute_error_metrics(y, y_interp_at_nodes)
 
     # 2) Aproksymacja wielomianowa MNK dla kilku stopni
-    degrees = [1, 2, 3, 4, 5]  # można zmienić wg uznania
+    degrees = [1, 2, 3, 4, 5]
     mnk_results = {}
     mnk_functions = {}
 

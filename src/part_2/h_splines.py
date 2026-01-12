@@ -24,7 +24,7 @@ def phi(xi: float, h: float, x: float | np.ndarray) -> np.ndarray:
 
 def build_spline_on_phi_basis(xk: np.ndarray, yk: np.ndarray):
     """
-    Splajn kubiczny na bazie funkcji φ_i (jak w materiałach).
+    Splajn kubiczny na bazie funkcji φ_i
     Zakładamy równoodległe węzły xk.
     Zwraca funkcję S3(x).
     """
@@ -68,7 +68,7 @@ def build_spline_on_phi_basis(xk: np.ndarray, yk: np.ndarray):
     c = np.zeros(n + 3, dtype=float)     # indeksy: 0..n+2 => i=-1..n+1
     c[1:n + 2] = np.linalg.solve(A, rhs) # c[1]..c[n+1]
 
-    # c_{-1} i c_{n+1} jak w materiałach
+    # c_{-1} i c_{n+1}
     c[0] = c[2] - (h / 3) * alpha
     c[n + 2] = c[n] + (h / 3) * beta
 
