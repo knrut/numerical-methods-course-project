@@ -1,5 +1,5 @@
 import numpy as np
-from params import Params
+from src.part_1.params import Params
 
 
 def heat_exchange_rhs(t: float, T: np.ndarray, p: Params) -> np.ndarray:

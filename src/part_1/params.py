@@ -1,4 +1,7 @@
 from dataclasses import dataclass
+from typing import Optional, Callable
+import numpy as np
+
 
 @dataclass
 class Params:
@@ -8,4 +11,6 @@ class Params:
     rod_specific_heat: float   # ciepło właściwe pręta [J/(kg*K)]
     fluid_specific_heat: float # ciepło właściwe płynu [J/(kg*K)]
     heat_transfer_coeff: float # współczynnik przejmowania ciepła h
+
+    h_func: Optional[Callable[[np.ndarray], np.ndarray]] = None
 

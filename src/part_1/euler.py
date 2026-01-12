@@ -1,6 +1,6 @@
 import numpy as np
 from typing import Callable
-from params import Params
+from src.part_1.params import Params
 
 
 def euler_explicit(
